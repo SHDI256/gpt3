@@ -48,6 +48,11 @@ class DB:
         self.cursor.execute(ex)
         self.close_connection()
 
+    def command(self, command):
+        self.connect()
+        self.cursor.execute(command)
+        self.close_connection()
+
 
 if __name__ == '__main__':
     test2 = DB('test4', 'postgres', '2706', 'localhost', '5432', new=False)
